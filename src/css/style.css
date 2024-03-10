@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Secular+One&display=swap');
+
+:root{
+    --font1: 'Secular One', sans-serif;
+    --font2: 'Rubik', sans-serif;
+}
+
+body {
+    background-color: black;
+    overflow: hidden;
+}
+
+main::after {
+    content: '';
+    background: linear-gradient(120deg, black 40%, transparent 65%) no-repeat;
+    width: 80vw;
+    height: 100vh;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.character {
+    display: none;
+    height: 100vh;
+}
+
+.character.selected {
+    display: block;
+}
+
+.character .img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.content {
+    min-height: 100vh;
+    max-width: 23.75rem;
+
+    position: absolute;
+    top: 0;
+    left: 7.5rem;
+    z-index: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content .character-name {
+    color: white;
+    font: 400 3rem var(--font1);
+    margin-bottom: 1.25rem;
+}
+
+.content .description {
+    color: white;
+    font-family: var(--font2);
+    line-height: 1.5rem;
+}
+
+.content .logo {
+    background-image: url('../imagens/one-piece-logo.png');
+    background-size: cover;
+    width: 15rem;
+    height: 6.25rem;
+    margin-bottom: 2rem;
+}
+
+.buttons {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: .75rem;
+
+    width: 11.25rem;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .3);
+}
+
+.buttons .button {
+    border: none;
+    background: none;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: all .2s;
+}
+
+.buttons .button.selected {
+    transform: scale(1.2);
+    box-shadow: 0px 0px 10px #d9d9d9;
+}
+
+.buttons .button img {
+    border-radius: 50%;
+    cursor: pointer;
+}
